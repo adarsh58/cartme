@@ -92,6 +92,17 @@ font-weight: bold;display: flex; justify-content: center;
     justify-content: start;
     width: 100%;
 }
+@media (max-width: 1314px) {
+    .homebanner{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 100%;
+    }
+    .homebanner>img{
+       display: none;
+    }
+  }
 .homebanner>img{
     height: 22rem;
     width:40rem;
