@@ -1,0 +1,12 @@
+.comment {
+  font-size: larger;
+}
+.user {
+  font-size: small;
+  text-align: end;
+}
+.date {
+    font-size: x-small;
+    text-align: end;
+  }
+  

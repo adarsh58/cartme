@@ -1,0 +1,48 @@
+.pitem {
+ 
+  display: grid;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  grid-template-areas: "image details";
+  grid-gap: .3rem;
+  text-align: start;
+  grid-template-columns: 0.5fr 1.8fr;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
+}
+.pimage {
+  grid-area: image;
+  
+  
+}
+
+.pdetails {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+ 
+
+}
+.title
+{
+  font-weight: bold;
+  font-size: larger;
+}
+.priceitem
+{
+  font-size: larger;
+  font-weight: bolder;
+}
+.priceinfo
+{
+  font-size:small;
+  font-weight: 300;
+}
+.review{
+  display: flex;
+  gap: 3rem;
+
+}

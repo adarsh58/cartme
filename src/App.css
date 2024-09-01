@@ -1,0 +1,68 @@
+.App
+{
+  
+  position: relative;
+  box-sizing: content-box;
+}
+.container
+{
+  height: calc(100vh - 56px) !important; /*minus navbar */
+  max-width: 1536px;
+
+  display: flex
+}
+/* 2xl */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+
+  @media (max-width: 300px) {
+    .container {
+      width: 100%;
+    }
+
+    @media (max-width: 100px) {
+      .container {
+        width: 100%;
+      }
+  }}}
+
+  
+
+
