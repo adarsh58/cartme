@@ -53,7 +53,7 @@ const Cart = (props) => {
         {filteredProd &&
           filteredProd.length > 0 &&
           filteredProd.map((ele, index) => {
-            return <ProductItem ShowAlert={props.ShowAlert} product={ele} />;
+            return <ProductItem key={index} ShowAlert={props.ShowAlert} product={ele} />;
           })}
       </div>
     </div>

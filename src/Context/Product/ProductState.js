@@ -67,7 +67,7 @@ const ProductState = (props) => {
             const result = await response.json();
             if (result) {
                 setProductListByCategory(result);
-                console.log(result)
+              
             }
         } catch (error) {
             console.log(error);

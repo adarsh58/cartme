@@ -53,14 +53,14 @@ const Home = (props) => {
       <div className="topcategories">
         {productListByCategory.products &&
           productListByCategory.products.slice(0, 5).map((ele, index) => {
-            return <CatCard product={ele} />;
+            return <CatCard key={index} product={ele} />;
           })}
       </div>
      
       <div className="products">
       {productListByCategory.products &&
           productListByCategory.products.map((ele, index) => {
-            return <ProductItem ShowAlert={props.ShowAlert} product={ele} />;
+            return <ProductItem key={index} ShowAlert={props.ShowAlert} product={ele} />;
           })}
       </div>
     </div>

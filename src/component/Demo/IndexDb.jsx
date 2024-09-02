@@ -1,22 +1,20 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useIndexedDB } from "react-indexed-db-hook";
 import ProductContext from "../../Context/Product/ProductContext";
 
 import "./IndexDb.css";
 const IndexDb = () => {
-  const { add} = useIndexedDB("cart");
-  const {
-    DeleteProduct,ClearAllProduct,GetAll,cart
-    } = useContext(ProductContext);
+  const { add } = useIndexedDB("cart");
+  const { DeleteProduct, ClearAllProduct, GetAll, cart } =
+    useContext(ProductContext);
   const [note, setNote] = useState({ name: "", pid: "" });
-
 
   useEffect(() => {
     GetAll();
   }, []);
 
   const Add = () => {
-    if (note.name.trim() !== "" && note.pid.trim() !== ""  ) {
+    if (note.name.trim() !== "" && note.pid.trim() !== "") {
       add({ name: note.name, pid: note.pid }).then(
         () => {
           GetAll();
@@ -29,18 +27,16 @@ const IndexDb = () => {
   };
 
   const Delete = (id) => {
-     DeleteProduct(id) 
-  }
+    DeleteProduct(id);
+  };
 
   const Clear = () => {
-   
-      ClearAllProduct();
-   
+    ClearAllProduct();
+
     setNote({ name: "", pid: "" });
   };
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
-  
   };
   return (
     <div className="container">
@@ -72,17 +68,18 @@ const IndexDb = () => {
           <button className="btn btn-secondary" onClick={Clear}>
             clear
           </button>
-        
-       
         </div>
         <ul>
           {cart &&
             cart.length > 0 &&
             cart.map((e, i) => {
               return (
-                <li> 
-                  ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId : {e.pid}{" "}<i onClick={()=>Delete(e.id)} className="bi bi-trash3"></i> <br></br>
-                   </li>
+                <li>
+                  ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId :{" "}
+                  {e.pid}{" "}
+                  <i onClick={() => Delete(e.id)} className="bi bi-trash3"></i>{" "}
+                  <br></br>
+                </li>
               );
             })}
         </ul>

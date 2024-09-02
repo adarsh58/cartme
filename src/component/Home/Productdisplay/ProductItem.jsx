@@ -47,7 +47,7 @@ const ProductItem = (props) => {
             </span>
           </div>
           <div className="other">
-            <button type="button" className="btn btn-sm btn-warning">
+            <button type="button" className="btn btn-sm btn-info">
               In Stock <span className="badge">{item.stock}</span>
             </button>
             
@@ -56,7 +56,7 @@ const ProductItem = (props) => {
           </div>
           <div className="addcart">
           <button onClick={(e)=>handleClick(item.title,item.id)} type="button" className="btn btn-sm  btn-dark">Add to Cart</button>
-         
+          <button onClick={handleBuy} type="button" className="btn btn-sm  btn-dark">Buy Now</button>
           </div>
           <div className="review">
             <h4>Reviews:</h4>

@@ -1,5 +1,5 @@
 import React, { useState,useEffect,useContext } from "react";
-import "./ProductItem.css";
+import "./ProductItemCart.css";
 
 const ProductItem = (props) => {
   const item= props.product
@@ -7,15 +7,15 @@ const ProductItem = (props) => {
 
   return (
     <>
-      <div className="pitem" >
-        <div className="pimage">
+      <div className="cartitem" >
+        <div className="cartimage">
           <img src={item.thumbnail}></img>
         </div>
-        <div className="pdetails">
-          <div className="title">
+        <div className="cartdetails">
+          <div className="carttitle">
             <span>{item.title}</span>
           </div>
-          <div className="rating">
+          <div className="cartrating">
             <span>
               <b>Rating:</b>
               <i>
@@ -23,23 +23,23 @@ const ProductItem = (props) => {
               </i>
             </span>
           </div>
-          <div className="pricetag">
-            <span className="priceitem">
+          <div className="cartpricetag">
+            <span className="cartpriceitem">
             <i className="bi bi-tags-fill"></i> ${item.price}&nbsp;
             </span>
-            <span className="priceinfo">
+            <span className="cartpriceinfo">
              Discount percentage : ${item.discountPercentage}
             </span>
           </div>
-          <div className="other">
+          <div className="cartother">
             <button type="button" className="btn btn-sm btn-warning">
-              In Stock <span className="badge">{item.stock}</span>
+              In Stock <span className="cartbadge">{item.stock}</span>
             </button>
             
             <div><i className="bi bi-arrow-return-left"></i>Return Policy : {item.returnPolicy}</div>
             
           </div>
-          <div className="addcart">
+          <div className="cartcheckout">
           <button  type="button" className="btn btn-sm  btn-dark ">Check out</button>
           </div>
         </div>

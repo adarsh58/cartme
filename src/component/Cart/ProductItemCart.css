@@ -1,4 +1,4 @@
-.pitem {
+.cartitem {
  
   display: grid;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -14,11 +14,11 @@
   height: fit-content;
   
 }
-.pimage {
+.cartimage {
   grid-area: image;
 }
 
-.pdetails {
+.cartdetails {
   grid-area: details;
   display: flex;
   flex-direction: column;
@@ -26,35 +26,35 @@
 }
 
 
-.title
+.carttitle
 {
   font-weight: bold;
   font-size: larger;
 }
-.priceitem
+.cartpriceitem
 {
   font-size: larger;
   font-weight: bolder;
 }
-.priceinfo
+.cartpriceinfo
 {
   font-size:small;
   font-weight: 300;
 }
-.review{
+.cartreview{
   display: flex;
   gap: 3rem;
 
 }
 
 @media (max-width: 1280px) {
-  .pdetails {
+  .cartdetails {
     grid-area: details;
     display: flex;
     flex-direction: column;
     gap: .5rem;
   }
-  .review{
+  .cartreview{
     display: none;
     flex-direction: column;
     gap: .1rem;
@@ -62,7 +62,7 @@
 }
 /*S20*/
 @media (max-width: 640px) {
-  .pitem {
+  .cartitem {
  
     display: grid;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -77,19 +77,19 @@
     width: 100%;
     
   }
-  .pdetails {
+  .cartdetails {
     grid-area: details;
     display: flex;
     flex-direction: column;
     gap: .1rem;
     margin-right: 20px;
   }
-  .pricetag
+  .cartpricetag
   {
     display: flex;
     flex-direction: column;
   }
-  .pimage>img {
+  .cartimage>img {
    width: 15rem;
    height: 15rem;
   }
