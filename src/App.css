@@ -1,14 +1,59 @@
-.App
-{
-  display: flex;
-  flex-direction: column;
 
-  box-sizing: content-box;
+
+/* Desktop Modcontainer utility class: */
+.Modcontainer {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
-.container
+
+.containerchild
 {
   height: calc(100vh - 56px) !important; /*minus navbar */
-  max-width: 1300px;
-  display: flex
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+/* 2xl */
+@media (max-width: 1536px) {
+  .Modcontainer {
+    max-width: 1280px;
+  }
 }
 
+/* xl */
+@media (max-width: 1280px) {
+  .Modcontainer {
+    max-width: 1024px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .Modcontainer {
+    max-width: 768px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .Modcontainer {
+    max-width: 640px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .Modcontainer {
+    max-width: 475px;
+  }
+}
+
+
+
+
+ 
+
+  

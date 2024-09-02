@@ -7,17 +7,17 @@ import Navbar from './component/Navbar/Navbar';
 import ProductState from './Context/Product/ProductState';
 function App() {
   return (
-    <div className="App">
+    <div className="Modcontainer">
       <BrowserRouter>
       <ProductState>
+        <div className="containerchild">
       <Navbar />
-        <div className="container">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/home" element={<div ><Home /></div>} />
             <Route exact path="/shop" element={<div >< Shop /></div>} />
           </Routes>
-        </div>
+          </div>
         </ProductState>
       </BrowserRouter>
 

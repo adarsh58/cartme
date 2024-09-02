@@ -38,7 +38,7 @@ const ProductItem = (props) => {
             
           </div>
           <div className="addcart">
-          <button type="button" class="btn  btn-dark">Add to Cart</button>
+          <button type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
           </div>
           <div className="review">
             <h4>Reviews:</h4>

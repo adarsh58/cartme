@@ -30,8 +30,9 @@ const Home = () => {
   return (
     <div className="home">
        <div className="homebanner">
-        <img className="banner" src={mobilebanner}></img>
-        <Crousel/>
+        <div className="staticbanner"><img className="banner" src={mobilebanner}></img></div>
+        <div className="crouselbanner">  <Crousel/></div>
+      
       </div>
       <div className="categoryselect">
         <select
