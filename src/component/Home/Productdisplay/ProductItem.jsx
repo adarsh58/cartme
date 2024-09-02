@@ -13,7 +13,7 @@ const ProductItem = (props) => {
     } = useContext(ProductContext);
   const handleClick = (title,id) => {
     AddtoCart(title,id)
-    props.ShowAlert("Successfully Added" ,"success");
+    props.ShowAlert("Successfully Added   "+ title ,"success");
   };
   const handleBuy=()=>{
     navigate("/cart");
