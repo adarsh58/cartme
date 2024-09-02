@@ -4,30 +4,22 @@ import ProductContext from "../../Context/Product/ProductContext";
 
 import "./IndexDb.css";
 const IndexDb = () => {
-  const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
+  const { add} = useIndexedDB("cart");
   const {
     DeleteProduct,ClearAllProduct,GetAll,cart
     } = useContext(ProductContext);
   const [note, setNote] = useState({ name: "", pid: "" });
-  const [noteDb, setNoteDb] = useState({ name: "", pid: "" });
+
 
   useEffect(() => {
-    getAll().then((personsFromDB) => {
-      setNoteDb(personsFromDB);
-    });
+    GetAll();
   }, []);
 
-  const GetAllPr = () => {
-    getAll().then((personsFromDB) => {
-      setNoteDb(personsFromDB);
-    });
-  };
   const Add = () => {
     if (note.name.trim() !== "" && note.pid.trim() !== ""  ) {
       add({ name: note.name, pid: note.pid }).then(
-        (event) => {
+        () => {
           GetAll();
-          GetAllPr();
         },
         (error) => {
           console.log("Error", error);
@@ -37,20 +29,13 @@ const IndexDb = () => {
   };
 
   const Delete = (id) => {
-    deleteRecord(id).then((event) => {
-
-     GetAllPr(); //local state
-     DeleteProduct(id) //context
-    });
-   
-    //==
-  };
+     DeleteProduct(id) 
+  }
 
   const Clear = () => {
-    clear().then(() => {
-      setNoteDb([]);
+   
       ClearAllProduct();
-    });
+   
     setNote({ name: "", pid: "" });
   };
   const onChange = (e) => {
@@ -81,9 +66,6 @@ const IndexDb = () => {
           ></input>
         </div>
         <div className="button">
-          <button className="btn btn-info" onClick={GetAllPr}>
-            get all
-          </button>
           <button className="btn btn-warning" onClick={Add}>
             add
           </button>
@@ -94,9 +76,9 @@ const IndexDb = () => {
        
         </div>
         <ul>
-          {noteDb &&
-            noteDb.length > 0 &&
-            noteDb.map((e, i) => {
+          {cart &&
+            cart.length > 0 &&
+            cart.map((e, i) => {
               return (
                 <li> 
                   ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId : {e.pid}{" "}<i onClick={()=>Delete(e.id)} class="bi bi-trash3"></i> <br></br>
