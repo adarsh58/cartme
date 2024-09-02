@@ -1,0 +1,48 @@
+.cartContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start; 
+    gap:1rem;
+    align-items: center;
+    margin-top: 1rem;
+    height: 100%;
+    box-shadow: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #000;
+   
+}
+
+.adv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.static 
+{
+    width:100%;
+}
+.static>img 
+{
+    width:100%;
+}
+.slider{
+    width: 100%;
+}
+
+
+
+.cartproducts
+{
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: start;
+    width: 100%;
+   
+    
+}

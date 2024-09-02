@@ -2,8 +2,8 @@ import React, { useState, useEffect,useContext } from "react";
 import { useIndexedDB } from "react-indexed-db-hook";
 import ProductContext from "../../Context/Product/ProductContext";
 
-import "./Shop.css";
-const Shop = () => {
+import "./IndexDb.css";
+const IndexDb = () => {
   const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
   const {
     DeleteProduct,ClearAllProduct,GetAll
@@ -105,4 +105,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default IndexDb;

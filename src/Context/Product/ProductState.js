@@ -45,7 +45,7 @@ const ProductState = (props) => {
 
     const FetchProduct = async () => {
         try {
-            const response = await fetch("https://dummyjson.com/products");
+            const response = await fetch("https://dummyjson.com/products?limit=300");
             if (!response.ok) throw new Error(response.statusText);
 
             const result = await response.json();

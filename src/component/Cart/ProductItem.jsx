@@ -1,24 +1,9 @@
 import React, { useState,useEffect,useContext } from "react";
 import "./ProductItem.css";
-import {useNavigate } from 'react-router-dom'
-import ProductContext from "../../../Context/Product/ProductContext";
-import Review from "./Review";
 
 const ProductItem = (props) => {
-  let navigate=useNavigate();
- 
-  const item = props.product;
-  const {
-    AddtoCart
-    } = useContext(ProductContext);
-  const handleClick = (title,id) => {
-    AddtoCart(title,id)
-    props.ShowAlert("Successfully Added" ,"success");
-  };
-  const handleBuy=()=>{
-    navigate("/cart");
-  }
-
+  const item= props.product
+  console.log(item)
 
   return (
     <>
@@ -55,16 +40,7 @@ const ProductItem = (props) => {
             
           </div>
           <div className="addcart">
-          <button onClick={(e)=>handleClick(item.title,item.id)} type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
-          <button onClick={handleBuy} type="button" class="btn btn-sm  btn-dark mx-3">Buy now</button>
-          </div>
-          <div className="review">
-            <h4>Reviews:</h4>
-            {
-                item.reviews && item.reviews.map((ele,index)=>{
-                    return (<Review item={ele}/>);
-                })
-            }
+          <button  type="button" class="btn btn-sm  btn-dark ">Check out</button>
           </div>
         </div>
       </div>

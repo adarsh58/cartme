@@ -5,7 +5,7 @@ import CatCard from "./CategoryCard/CatCard";
 import mobilebanner from '../assets/mobilebanner.jpg'
 import Crousel from "./Crousel";
 import ProductItem from "./Productdisplay/ProductItem";
-const Home = () => {
+const Home = (props) => {
   const {
     productList,
     FetchProduct,
@@ -60,7 +60,7 @@ const Home = () => {
       <div className="products">
       {productListByCategory.products &&
           productListByCategory.products.map((ele, index) => {
-            return <ProductItem product={ele} />;
+            return <ProductItem ShowAlert={props.ShowAlert} product={ele} />;
           })}
       </div>
     </div>
