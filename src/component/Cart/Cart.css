@@ -9,7 +9,7 @@
     height: 100%;
     box-shadow: 2rem;
     border-radius: 1rem;
-    border: 1px solid #000;
+  
    
 }
 
@@ -45,4 +45,15 @@
     width: 100%;
    
     
+}
+.empty
+{
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    font-size: xx-large;
+    font-weight: bold;
 }

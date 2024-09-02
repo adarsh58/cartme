@@ -33,6 +33,11 @@ const Cart = (props) => {
     console.log(activeIDs)
     console.log(test)
   };
+
+  if(filteredProd &&
+    filteredProd.length < 0 ){
+        return <h2>Your Amazon Cart is empty.</h2>
+    }
   return (
     <div className="cartContainer">
       <div className="adv">
@@ -44,6 +49,9 @@ const Cart = (props) => {
         </div>
       </div>
       <div className="cartproducts">
+        {
+             filteredProd.length <= 0 && <div className="empty">Your Amazon Cart is empty.</div>
+        }
         {filteredProd &&
           filteredProd.length > 0 &&
           filteredProd.map((ele, index) => {
