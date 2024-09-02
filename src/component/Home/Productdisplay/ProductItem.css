@@ -95,33 +95,3 @@
   }
   
 }
-
-/*Iphone SE*/
-@media (max-width:  376px) {
-  .pitem {
- 
-    display: grid;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    grid-template-areas: "image details";
-    grid-gap: 2px;
-    text-align: start;
-    grid-template-columns: 0.1fr .2fr;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: white;
-    margin: 0 auto;
-    width: 100%;
-    
-  }
-  .pdetails {
-    grid-area: details;
-    display: flex;
-    flex-direction: column;
-    gap: .1rem;
-  }
-  .pimage>img {
-   width: 10rem;
-   height: 10rem;
-  }
-  
-}

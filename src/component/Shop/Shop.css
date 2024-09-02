@@ -1,0 +1,16 @@
+.form
+{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    width: 100%;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+.name ,.pid
+{
+    display: flex;
+    width: 50%;
+}
