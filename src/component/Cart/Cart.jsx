@@ -30,8 +30,6 @@ const Cart = (props) => {
         ? productList.products.filter((p) =>{ return  activeIDs.includes(p.id)})
         : [];
      setfilteredProd(test);
-    console.log(activeIDs)
-    console.log(test)
   };
 
   if(filteredProd &&

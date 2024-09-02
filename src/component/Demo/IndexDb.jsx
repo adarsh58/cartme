@@ -40,7 +40,7 @@ const IndexDb = () => {
   };
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
-    console.log(note, note.length);
+  
   };
   return (
     <div className="container">
@@ -81,7 +81,7 @@ const IndexDb = () => {
             cart.map((e, i) => {
               return (
                 <li> 
-                  ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId : {e.pid}{" "}<i onClick={()=>Delete(e.id)} class="bi bi-trash3"></i> <br></br>
+                  ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId : {e.pid}{" "}<i onClick={()=>Delete(e.id)} className="bi bi-trash3"></i> <br></br>
                    </li>
               );
             })}

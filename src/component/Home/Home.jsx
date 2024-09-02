@@ -37,7 +37,7 @@ const Home = (props) => {
       <div className="categoryselect">
         <select
           onChange={(event) => handleCategorySelect(event.target.value)}
-          class="form-select"
+          className="form-select"
           aria-label="Default select example"
         >
           {categories &&

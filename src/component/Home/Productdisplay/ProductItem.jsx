@@ -34,13 +34,13 @@ const ProductItem = (props) => {
             <span>
               <b>Rating:</b>
               <i>
-                {item.rating}&nbsp;<i class="bi bi-star-fill"></i>
+                {item.rating}&nbsp;<i className="bi bi-star-fill"></i>
               </i>
             </span>
           </div>
           <div className="pricetag">
             <span className="priceitem">
-            <i class="bi bi-tags-fill"></i> ${item.price}&nbsp;
+            <i className="bi bi-tags-fill"></i> ${item.price}&nbsp;
             </span>
             <span className="priceinfo">
              Discount percentage : ${item.discountPercentage}
@@ -51,11 +51,11 @@ const ProductItem = (props) => {
               In Stock <span className="badge">{item.stock}</span>
             </button>
             
-            <div><i class="bi bi-arrow-return-left"></i>Return Policy : {item.returnPolicy}</div>
+            <div><i className="bi bi-arrow-return-left"></i>Return Policy : {item.returnPolicy}</div>
             
           </div>
           <div className="addcart">
-          <button onClick={(e)=>handleClick(item.title,item.id)} type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
+          <button onClick={(e)=>handleClick(item.title,item.id)} type="button" className="btn btn-sm  btn-dark">Add to Cart</button>
          
           </div>
           <div className="review">

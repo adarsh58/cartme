@@ -10,8 +10,8 @@ const CatCard = (props) => {
         <div className="cardtext">{props.product.title}</div>
         <div className="cardbadge">
           {" "}
-          <button type="button" class="btn btn-danger">
-            Limited Time Deal<span class="badge text-bg-warning"></span>
+          <button type="button" className="btn btn-danger">
+            Limited Time Deal<span className="badge text-bg-warning"></span>
           </button>
         
         </div>
