@@ -56,7 +56,7 @@ const ProductItem = (props) => {
           </div>
           <div className="addcart">
           <button onClick={(e)=>handleClick(item.title,item.id)} type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
-          <button onClick={handleBuy} type="button" class="btn btn-sm  btn-dark mx-3">Buy now</button>
+         
           </div>
           <div className="review">
             <h4>Reviews:</h4>
