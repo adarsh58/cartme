@@ -1,17 +1,21 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import "./ProductItem.css";
+import ProductContext from "../../../Context/Product/ProductContext";
 import Review from "./Review";
 
 const ProductItem = (props) => {
   const item = props.product;
-  
-  const handleClick = (id) => {
-    alert("Added to cart with ID "+ id);
+  const {
+    AddtoCart
+    } = useContext(ProductContext);
+  const handleClick = (title,id) => {
+    AddtoCart(title,id)
   };
+
 
   return (
     <>
-      <div className="pitem" onClick={(e)=>handleClick(item.id)}>
+      <div className="pitem" >
         <div className="pimage">
           <img src={item.thumbnail}></img>
         </div>
@@ -44,7 +48,7 @@ const ProductItem = (props) => {
             
           </div>
           <div className="addcart">
-          <button type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
+          <button onClick={(e)=>handleClick(item.title,item.id)} type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
           </div>
           <div className="review">
             <h4>Reviews:</h4>

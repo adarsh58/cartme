@@ -1,11 +1,48 @@
 import ProductContext from './ProductContext';
 import { useState } from 'react';
-
+import { useIndexedDB } from "react-indexed-db-hook";
 const ProductState = (props) => {
     const [productList, setProductList] = useState([]);
     const [categories, setCategories] = useState([]);
     const [productListByCategory, setProductListByCategory] = useState([]);
+    const [cart, setCart] = useState([]);
+    const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
+   
+   
+    const GetAll = () => {
+        getAll().then((personsFromDB) => {
+            setCart(personsFromDB);
+        });
+      };
+      const AddtoCart = (product,Id) => {
+        if (product !== "" && Id !== ""  ) {
+          add({ name: product, pid: Id}).then(
+            (event) => {
+              GetAll();
+            },
+            (error) => {
+              console.log("Error", error);
+            }
+          );
+        }
+      };
+
+      const DeleteProduct = (id) => {
+        deleteRecord(id).then((event) => {
+          GetAll();
+        });
+      };
     
+      const ClearAllProduct = () => {
+        clear().then(() => {
+            setCart([]);
+        });
+     
+      };
+
+
+
+
     const FetchProduct = async () => {
         try {
             const response = await fetch("https://dummyjson.com/products");
@@ -56,7 +93,7 @@ const ProductState = (props) => {
 
 
 return (
-    <ProductContext.Provider value={{ productList,FetchProduct,FetchProductsbyCategory,productListByCategory,categories,FetchCategories }}>
+    <ProductContext.Provider value={{ productList,FetchProduct,FetchProductsbyCategory,productListByCategory,categories,FetchCategories,GetAll,cart,AddtoCart,DeleteProduct,ClearAllProduct,AddtoCart }}>
         {props.children}
     </ProductContext.Provider>
 )

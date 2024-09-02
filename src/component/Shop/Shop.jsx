@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { useIndexedDB } from "react-indexed-db-hook";
+import ProductContext from "../../Context/Product/ProductContext";
+
 import "./Shop.css";
 const Shop = () => {
   const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
-
+  const {
+    DeleteProduct,ClearAllProduct,GetAll
+    } = useContext(ProductContext);
   const [note, setNote] = useState({ name: "", pid: "" });
   const [noteDb, setNoteDb] = useState({ name: "", pid: "" });
 
@@ -13,7 +17,7 @@ const Shop = () => {
     });
   }, []);
 
-  const GetAll = () => {
+  const GetAllPr = () => {
     getAll().then((personsFromDB) => {
       setNoteDb(personsFromDB);
     });
@@ -23,6 +27,7 @@ const Shop = () => {
       add({ name: note.name, pid: note.pid }).then(
         (event) => {
           GetAll();
+          GetAllPr();
         },
         (error) => {
           console.log("Error", error);
@@ -34,12 +39,14 @@ const Shop = () => {
   const Delete = (id) => {
     deleteRecord(id).then((event) => {
       GetAll();
+      DeleteProduct(id);
     });
   };
 
   const Clear = () => {
     clear().then(() => {
       setNoteDb([]);
+      ClearAllProduct();
     });
     setNote({ name: "", pid: "" });
   };
@@ -71,7 +78,7 @@ const Shop = () => {
           ></input>
         </div>
         <div className="button">
-          <button className="btn btn-info" onClick={GetAll}>
+          <button className="btn btn-info" onClick={GetAllPr}>
             get all
           </button>
           <button className="btn btn-warning" onClick={Add}>
