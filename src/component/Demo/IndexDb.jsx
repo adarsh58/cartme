@@ -6,7 +6,7 @@ import "./IndexDb.css";
 const IndexDb = () => {
   const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
   const {
-    DeleteProduct,ClearAllProduct,GetAll
+    DeleteProduct,ClearAllProduct,GetAll,cart
     } = useContext(ProductContext);
   const [note, setNote] = useState({ name: "", pid: "" });
   const [noteDb, setNoteDb] = useState({ name: "", pid: "" });
@@ -38,9 +38,12 @@ const IndexDb = () => {
 
   const Delete = (id) => {
     deleteRecord(id).then((event) => {
-      GetAll();
-      DeleteProduct(id);
+
+     GetAllPr(); //local state
+     DeleteProduct(id) //context
     });
+   
+    //==
   };
 
   const Clear = () => {
@@ -87,6 +90,7 @@ const IndexDb = () => {
           <button className="btn btn-secondary" onClick={Clear}>
             clear
           </button>
+        
        
         </div>
         <ul>
