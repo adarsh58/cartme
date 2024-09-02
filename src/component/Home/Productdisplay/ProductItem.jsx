@@ -1,30 +1,14 @@
 import React, { useState,useEffect } from "react";
 import "./ProductItem.css";
 import Review from "./Review";
-import { useIndexedDB } from "react-indexed-db-hook";
+
 const ProductItem = (props) => {
   const item = props.product;
-
-  const { add,clear,getAll  } = useIndexedDB("cart");
-  useIndexedDB("cart");
-  const [id, setId] = useState();
+  
   const handleClick = (id) => {
-   
-    add({ name: "Adarsh", pid: id }).then(
-      (event) => {
-        console.log("ID Generated: ",event.target);
-      },
-      (error) => {
-        console.log("Error",error);
-      },
-    );
+    alert("Added to cart with ID "+ id);
   };
-const ClearStore=()=>
-{
-  clear().then(() => {
-    alert("All Clear!");
-  });
-}
+
   return (
     <>
       <div className="pitem" onClick={(e)=>handleClick(item.id)}>
@@ -60,7 +44,7 @@ const ClearStore=()=>
             
           </div>
           <div className="addcart">
-          <button onClick={ClearStore} type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
+          <button type="button" class="btn btn-sm  btn-dark">Add to Cart</button>
           </div>
           <div className="review">
             <h4>Reviews:</h4>
