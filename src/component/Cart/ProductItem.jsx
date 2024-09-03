@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import "./ProductItemCart.css";
 
 const ProductItem = (props) => {
-  const item = props.product;
-
+  const item = props.products;
+   const cart=props.cart.filter((e)=>{return e.pid===item.id });
+   let quantity=cart[0].quantity
+   console.log(cart)
+   console.log(quantity)
   return (
     <>
       <div className="cartitem">
@@ -21,8 +24,8 @@ const ProductItem = (props) => {
           </div>
           <div className="cartcheckout">
             <button type="button" className="btn btn-sm  btn-dark ">
-              Check out
-            </button>
+             Quantity : {quantity}
+                         </button>
           </div>
         </div>
       </div>

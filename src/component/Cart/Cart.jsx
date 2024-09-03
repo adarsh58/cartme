@@ -7,7 +7,8 @@ import ProductContext from "../../Context/Product/ProductContext";
 import ProductItem from "./ProductItem";
 const Cart = (props) => {
   const [filteredProd, setfilteredProd] = useState([]);
-  const { productList, FetchProduct } = useContext(ProductContext);
+
+  const { productList, FetchProduct,cart } = useContext(ProductContext);
   const {  getAll } = useIndexedDB("cart");
   useEffect(() => {
     FetchProduct();
@@ -22,9 +23,10 @@ const Cart = (props) => {
     });
   }, []);
 
-  const [cartDb, setCartDb] = useState({ name: "", pid: "" });
+  const [cartDb, setCartDb] = useState([]);
   const filterByCart = (personsFromDB) => {
     const activeIDs=personsFromDB.map((e)=>{return e.pid});
+
     const test =
       productList.products && productList.products.length > 0
         ? productList.products.filter((p) =>{ return  activeIDs.includes(p.id)})
@@ -53,7 +55,7 @@ const Cart = (props) => {
         {filteredProd &&
           filteredProd.length > 0 &&
           filteredProd.map((ele, index) => {
-            return <ProductItem key={index} ShowAlert={props.ShowAlert} product={ele} />;
+            return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} />;
           })}
       </div>
     </div>

@@ -31,7 +31,7 @@ const ProductState = (props) => {
       const AddtoCart = (product,Id,q) => {
         if (product !== "" && Id !== ""  ) {
           add({ name: product, pid: Id,quantity:q}).then(
-            (event) => {   console.log("Added");
+            (event) => {   
               GetAll();
             },
             (error) => {
@@ -44,7 +44,7 @@ const ProductState = (props) => {
         if (product !== "" && pId !== ""  ) {
           update({ id:id,name: product, pid: pId,quantity:q}).then(
             (event) => {
-              console.log("updated");
+            
               GetAll();
             },
             (error) => {

@@ -14,7 +14,7 @@ const ProductItem = (props) => {
   const handleClick = (title, pid, _quantity) => {
     
     const result=GetQuantityByPid(pid);
-    console.log("after",result);
+    
     if(result.length===0){  
       AddtoCart(title, pid, 1);
     }
