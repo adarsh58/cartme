@@ -15,7 +15,7 @@ const IndexDb = () => {
 
   const Add = () => {
     if (note.name.trim() !== "" && note.pid.trim() !== "") {
-      add({ name: note.name, pid: note.pid }).then(
+      add({ name: note.name, pid: note.pid  }).then(
         () => {
           GetAll();
         },
@@ -76,7 +76,8 @@ const IndexDb = () => {
               return (
                 <li>
                   ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId :{" "}
-                  {e.pid}{" "}
+                  {e.pid}{" "}<br></br> Quantity :{e.quantity}{" "}
+                 
                   <i onClick={() => Delete(e.id)} className="bi bi-trash3"></i>{" "}
                   <br></br>
                 </li>

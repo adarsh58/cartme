@@ -6,18 +6,45 @@ const ProductState = (props) => {
     const [categories, setCategories] = useState([]);
     const [productListByCategory, setProductListByCategory] = useState([]);
     const [cart, setCart] = useState([]);
-    const { add, clear, getAll, deleteRecord } = useIndexedDB("cart");
+    const [quantity, setQuantity] = useState([]);
+    const { add, clear, getAll, deleteRecord,getByIndex,update  } = useIndexedDB("cart");
    
    
+    const GetQuantityByPid=(pid)=>{
+      
+      // getByIndex("pid", 78).then((data) => {
+      //   setQuantity(data);
+      // });
+      GetAll();
+      let quantityById=cart.filter(item=>{return item.pid===pid});
+    
+      setQuantity(quantityById);
+      return quantityById;
+       
+      
+    }
     const GetAll = () => {
         getAll().then((personsFromDB) => {
             setCart(personsFromDB);
         });
       };
-      const AddtoCart = (product,Id) => {
+      const AddtoCart = (product,Id,q) => {
         if (product !== "" && Id !== ""  ) {
-          add({ name: product, pid: Id}).then(
+          add({ name: product, pid: Id,quantity:q}).then(
+            (event) => {   console.log("Added");
+              GetAll();
+            },
+            (error) => {
+              console.log("Error", error);
+            }
+          );
+        }
+      };
+      const UpdatetoCart = (id,product,pId,q) => {
+        if (product !== "" && pId !== ""  ) {
+          update({ id:id,name: product, pid: pId,quantity:q}).then(
             (event) => {
+              console.log("updated");
               GetAll();
             },
             (error) => {
@@ -36,6 +63,7 @@ const ProductState = (props) => {
       const ClearAllProduct = () => {
         clear().then(() => {
             setCart([]);
+            setQuantity([]);
         });
      
       };
@@ -93,7 +121,7 @@ const ProductState = (props) => {
 
 
 return (
-    <ProductContext.Provider value={{ productList,FetchProduct,FetchProductsbyCategory,productListByCategory,categories,FetchCategories,GetAll,cart,AddtoCart,DeleteProduct,ClearAllProduct,AddtoCart }}>
+    <ProductContext.Provider value={{ productList,FetchProduct,FetchProductsbyCategory,productListByCategory,categories,FetchCategories,GetAll,cart,AddtoCart,DeleteProduct,ClearAllProduct,AddtoCart,GetQuantityByPid,quantity,UpdatetoCart }}>
         {props.children}
     </ProductContext.Provider>
 )
