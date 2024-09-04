@@ -56,7 +56,7 @@ const Cart = (props) => {
       </div>
       <div className="cartproducts">
         {
-             filteredProd.length <= 0 && <div className="empty">Your Amazon Cart is empty.</div>
+             filteredProd.length <= 0 && <div className="empty">Your Shopping Cart is empty.</div>
         }
         {filteredProd &&
           filteredProd.length > 0 &&
