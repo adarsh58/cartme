@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {  useContext } from "react";
 import "./ProductItem.css";
 import { useNavigate } from "react-router-dom";
 import ProductContext from "../../../Context/Product/ProductContext";
@@ -6,13 +6,11 @@ import Review from "./Review";
 
 const ProductItem = (props) => {
   let navigate = useNavigate();
-
   const item = props.product;
-  
- 
   const { AddtoCart, GetQuantityByPid, UpdatetoCart,cart } =
     useContext(ProductContext);
    
+    
     const _cart = cart.filter((e) => {
       return e.pid === item.id;
     });
@@ -39,13 +37,6 @@ const ProductItem = (props) => {
     props.ShowAlert("Successfully Added   " + title, "success");
   };
 
-  const CalStock=(pid)=>{
-    const result = GetQuantityByPid(pid);
-    console.log(item.stock + "-" + ( result && result.length>0 ?result[0].quantity:0));
-   // console.log(item.Stock -  result[0].quantity)
-  // return item.Stock -  result[0].quantity;
-
-  }
   const handleBuy = (title, pid) => {
     handleClick(title, pid);
     navigate("/cart");

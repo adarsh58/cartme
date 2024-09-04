@@ -4,9 +4,6 @@ import samsung2 from '../assets/samsung2.jpg'
 
 import samsung3 from '../assets/samsung3.jpg'
 import saumsung4 from '../assets/saumsung4.jpg'
-
-
-import realme from '../assets/realme.jpg'
 const CartCrousel = () => {
   return (
     <div id="carouselExample" className="carousel slide">

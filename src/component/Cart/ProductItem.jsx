@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useContext } from "react";
 import "./ProductItemCart.css";
 import ProductContext from "../../Context/Product/ProductContext";
 const ProductItem = (props) => {
   const item = props.products;
-  const { DeleteProduct,GetAll, UpdatetoCart } =
+  const {GetAll, UpdatetoCart } =
     useContext(ProductContext);
   const cart = props.cart.filter((e) => {
     return e.pid === item.id;

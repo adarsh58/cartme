@@ -7,7 +7,6 @@ import Crousel from "./Crousel";
 import ProductItem from "./Productdisplay/ProductItem";
 const Home = (props) => {
   const {
-    productList,
     FetchProduct,
     categories,
     FetchCategories,
