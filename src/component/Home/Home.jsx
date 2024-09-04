@@ -17,11 +17,11 @@ const Home = (props) => {
   useEffect(() => {
     FetchProduct();
     FetchCategories();
-    FetchProductsbyCategory("laptops", 200);
+    FetchProductsbyCategory("tops", 1000);
   }, []);
 
   const handleCategorySelect = (e) => {
-    FetchProductsbyCategory(e, 200);
+    FetchProductsbyCategory(e, 1000);
   };
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
