@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/index">
-                IndexDB
+                IndexDB For Admin
               </Link>
             </li>
           </ul>

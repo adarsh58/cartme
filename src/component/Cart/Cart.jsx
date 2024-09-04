@@ -3,6 +3,7 @@ import "./Cart.css";
 import { useIndexedDB } from "react-indexed-db-hook";
 import nord from "../assets/nord.jpg";
 import CartCrousel from "./CartCrousel";
+import detailIphone from '../assets/detailIphone.jpg'
 import ProductContext from "../../Context/Product/ProductContext";
 import ProductItem from "./ProductItem";
 const Cart = (props) => {
@@ -63,6 +64,9 @@ const Cart = (props) => {
             return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} DeletebyQuantity={DeletebyQuantity} />;
           })}
       </div>
+      <div className="static">
+          <img src={detailIphone}></img>
+        </div>
     </div>
   );
 };
