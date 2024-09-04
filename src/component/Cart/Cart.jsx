@@ -8,8 +8,9 @@ import ProductItem from "./ProductItem";
 const Cart = (props) => {
   const [filteredProd, setfilteredProd] = useState([]);
 
-  const { productList, FetchProduct,cart } = useContext(ProductContext);
+  const { productList, FetchProduct,cart,DeleteProduct } = useContext(ProductContext);
   const {  getAll } = useIndexedDB("cart");
+  console.log(cart)
   useEffect(() => {
     FetchProduct();
    
@@ -21,9 +22,13 @@ const Cart = (props) => {
     getAll().then((personsFromDB) => {
         filterByCart(personsFromDB);
     });
-  }, []);
+  }, [cart]);
 
-  const [cartDb, setCartDb] = useState([]);
+    const DeletebyQunatity=(_index)=>{
+      DeleteProduct(_index);
+    
+    }
+
   const filterByCart = (personsFromDB) => {
     const activeIDs=personsFromDB.map((e)=>{return e.pid});
 
@@ -55,7 +60,7 @@ const Cart = (props) => {
         {filteredProd &&
           filteredProd.length > 0 &&
           filteredProd.map((ele, index) => {
-            return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} />;
+            return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} DeletebyQunatity={DeletebyQunatity} />;
           })}
       </div>
     </div>

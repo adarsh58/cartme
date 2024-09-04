@@ -21,7 +21,7 @@ function App() {
     setAlert(true);
     setInterval(() => {
       setAlert(false);
-    }, 100);
+    }, 5000);
   }
   return (
     <div className="Modcontainer">

@@ -11,7 +11,7 @@ const ProductItem = (props) => {
   const { AddtoCart,GetQuantityByPid,quantity,GetAll ,UpdatetoCart} = useContext(ProductContext);
 
   
-  const handleClick = (title, pid, _quantity) => {
+  const handleClick = (title, pid) => {
     
     const result=GetQuantityByPid(pid);
     
@@ -24,7 +24,8 @@ const ProductItem = (props) => {
   
     props.ShowAlert("Successfully Added   " + title, "success");
   };
-  const handleBuy = () => {
+  const handleBuy = (title, pid) => {
+    handleClick(title, pid);
     navigate("/cart");
   };
 
@@ -68,16 +69,16 @@ const ProductItem = (props) => {
             <button
               onClick={(e) => handleClick(item.title, item.id)}
               type="button"
-              className="btn btn-sm  btn-dark mx-3"
+              className="btn btn-sm btn-warning mx-3"
             >
-              Add to Cart
+               <span style={{fontSize:'10px'}}>Add to cart</span>
             </button>
             <button
-              onClick={handleBuy}
+              onClick={(e)=>handleBuy(item.title, item.id)}
               type="button"
-              className="btn btn-sm  btn-dark mx-3"
+              className="btn btn-sm mx-3 btn-warning "
             >
-              Buy Now
+              <span style={{fontSize:'10px'}}>Buy Now</span>
             </button>
           </div>
           <div className="review">
