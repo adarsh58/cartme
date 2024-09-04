@@ -11,6 +11,7 @@ const ProductItem = (props) => {
   let _quantity =cart[0] && cart[0].quantity;
   let _dbIndex =cart[0] && cart[0].id;
 
+ let inStock =item.stock-_quantity===0 ? false:true;
   const IncQuantity = (pid, title) => {
     UpdatetoCart(_dbIndex, title, pid, _quantity + 1);
   };
@@ -40,7 +41,7 @@ const ProductItem = (props) => {
           </div>
 
           <div className="cartcheckout">
-          <button type="button" className="btn btn-sm  btn-warning">
+        {inStock ? <button type="button" className="btn btn-sm  btn-warning">
           <span  className="mx-2">Qty</span>
             <i
               class="bi bi-dash-circle-fill mx-2"
@@ -51,19 +52,20 @@ const ProductItem = (props) => {
          
             <i
               onClick={() => IncQuantity(item.id, item.title)}
-              class="bi bi-plus-circle-fill mx-2"
+              class="bi bi-plus-circle-fill mx-3"
             ></i>
-   </button>
+   </button>: <b style={{fontSize:'15px'}}>Out Of Stock</b>}  
           </div>
           <div className="cartcheckout">
-          <button type="button" className="btn btn-sm  btn-info">
-          <span  className="mx-2">Total</span>
+          <button type="button" className="btn btn-sm btn-info">
+          <span style={{fontSize:'15px'}} className="">Checkout </span>
            
-           
-              $ {(_quantity * item.price).toFixed(2)}
+          ${(_quantity * item.price).toFixed(2)}
+             
          
             
    </button>
+
           </div>
         </div>
       </div>

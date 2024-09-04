@@ -94,7 +94,7 @@
 {
   display: flex;
   margin-top: 10px;
-
+ flex-direction: column ;
   margin-left: 0px;
   overflow-x: hidden;
   justify-content: start;
