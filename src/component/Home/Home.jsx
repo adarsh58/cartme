@@ -43,7 +43,7 @@ const Home = (props) => {
           {categories &&
             categories.map((e, i) => {
               return (
-                <option selected={e==="laptops"} key={i} value={e}>
+                <option selected={e==="tops"} key={i} value={e}>
                   {capitalizeFirstLetter(e)}
                 </option>
               );
