@@ -24,7 +24,7 @@ const Cart = (props) => {
     });
   }, [cart]);
 
-    const DeletebyQunatity=(_index)=>{
+    const DeletebyQuantity=(_index)=>{
       DeleteProduct(_index);
     
     }
@@ -60,7 +60,7 @@ const Cart = (props) => {
         {filteredProd &&
           filteredProd.length > 0 &&
           filteredProd.map((ele, index) => {
-            return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} DeletebyQunatity={DeletebyQunatity} />;
+            return <ProductItem key={index} ShowAlert={props.ShowAlert} products={ele} cart={cart} DeletebyQuantity={DeletebyQuantity} />;
           })}
       </div>
     </div>

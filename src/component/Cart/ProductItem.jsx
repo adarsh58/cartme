@@ -19,7 +19,7 @@ const ProductItem = (props) => {
       UpdatetoCart(_dbIndex, title, pid, _quantity - 1)
     
     }else{
-      props.DeletebyQunatity(_dbIndex);
+      props.DeletebyQuantity(_dbIndex);
       GetAll();
     };
   };
