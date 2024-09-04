@@ -39,6 +39,7 @@
 
 
 
+
 @media (max-width: 1280px) {
   .cartdetails {
     grid-area: details;
@@ -75,10 +76,29 @@
   {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
   }
   .cartimage>img {
    width: 15rem;
    height: 15rem;
   }
+  .cartcheckout .btn
+{
+  display: flex;
+  margin-top: 20px;
+  margin-right: 20px;
+  justify-content: start;
+ 
+}
+.cartcheckout 
+{
+  display: flex;
+  margin-top: 10px;
+
+  margin-left: 0px;
+  overflow-x: hidden;
+  justify-content: start;
+ 
+} 
   
 }

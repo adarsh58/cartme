@@ -40,17 +40,20 @@ const ProductItem = (props) => {
           </div>
 
           <div className="cartcheckout">
+          <button type="button" className="btn btn-sm  btn-warning">
+          <span  className="mx-2">Qty</span>
             <i
-              class="bi bi-dash-circle-fill"
+              class="bi bi-dash-circle-fill mx-2"
               onClick={() => DecQuantity(item.id, item.title)}
             ></i>
-            <button type="button" className="btn btn-sm  btn-dark mx-3">
-              Quantity : {_quantity}
-            </button>
+           
+              {_quantity}
+         
             <i
               onClick={() => IncQuantity(item.id, item.title)}
-              class="bi bi-plus-circle-fill"
+              class="bi bi-plus-circle-fill mx-2"
             ></i>
+   </button>
           </div>
         </div>
       </div>
