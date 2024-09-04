@@ -76,7 +76,7 @@ const ProductItem = (props) => {
             <button
               onClick={(e)=>handleBuy(item.title, item.id)}
               type="button"
-              className="btn btn-sm mx-3 btn-warning "
+              className="btn btn-sm mx-3 btn-warning my-2"
             >
               <span style={{fontSize:'10px'}}>Buy Now</span>
             </button>
