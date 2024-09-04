@@ -92,6 +92,7 @@ const ProductItem = (props) => {
               onClick={(e) => handleClick(item.title, item.id)}
               type="button"
               className="btn btn-sm btn-warning mx-3"
+              hidden={!inStock}
             >
               <span style={{ fontSize: "10px" }}>Add to cart</span>
             </button>
@@ -99,10 +100,15 @@ const ProductItem = (props) => {
               onClick={(e) => handleBuy(item.title, item.id)}
               type="button"
               className="btn btn-sm mx-3 btn-warning my-2"
+              hidden={!inStock}
             >
               <span style={{ fontSize: "10px" }}>Buy Now</span>
             </button>
           </div>
+         {!inStock &&
+          <div className="notify">
+            <p><b>Item not Available</b></p>
+          </div>}
           <div className="review">
             <h4>Reviews:</h4>
             {item.reviews &&
