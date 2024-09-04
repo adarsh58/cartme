@@ -55,6 +55,16 @@ const ProductItem = (props) => {
             ></i>
    </button>
           </div>
+          <div className="cartcheckout">
+          <button type="button" className="btn btn-sm  btn-info">
+          <span  className="mx-2">Total</span>
+           
+           
+              $ {(_quantity * item.price).toFixed(2)}
+         
+            
+   </button>
+          </div>
         </div>
       </div>
     </>
