@@ -78,10 +78,10 @@ const IndexDb = () => {
       <div className="row">
         {" "}
         <div className="button">
-          <button className="btn btn-warning" onClick={Add}>
+          <button className="btn btn-warning mx-3 my-3" onClick={Add}>
             add
           </button>
-          <button className="btn btn-secondary" onClick={Clear}>
+          <button className="btn btn-danger mx-3 my-3" onClick={Clear}>
             clear
           </button>
         </div>
