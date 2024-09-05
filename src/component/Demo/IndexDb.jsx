@@ -15,7 +15,7 @@ const IndexDb = () => {
 
   const Add = () => {
     if (note.name.trim() !== "" && note.pid.trim() !== "") {
-      add({ name: note.name, pid: note.pid  }).then(
+      add({ name: note.name, pid: note.pid }).then(
         () => {
           GetAll();
         },
@@ -39,11 +39,18 @@ const IndexDb = () => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container">
-      <div className="form">
-        <h2>IndexDB working</h2>
-        <div className="text">
-          <label className="label">Name</label> &nbsp;&nbsp;&nbsp;&nbsp;
+    <div className="container text-center">
+      <div className="row">
+        <div className="col-12 ">
+          {" "}
+          <h2>IndexDB working</h2>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-6">
+          <label className="label">Name</label>
+        </div>
+        <div className="col-6 ">
           <input
             onChange={onChange}
             name="name"
@@ -51,9 +58,15 @@ const IndexDb = () => {
             value={note.name}
           ></input>
         </div>
-        <div className="text">
+      </div>
+      <div className="row">
+        <div className="col-6">
+          {" "}
           <label className="label">PrId</label>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+
+        <div className="col-6">
+          {" "}
           <input
             onChange={onChange}
             name="pid"
@@ -61,6 +74,9 @@ const IndexDb = () => {
             value={note.pid}
           ></input>
         </div>
+      </div>
+      <div className="row">
+        {" "}
         <div className="button">
           <button className="btn btn-warning" onClick={Add}>
             add
@@ -69,6 +85,9 @@ const IndexDb = () => {
             clear
           </button>
         </div>
+      </div>
+      <div className="row">
+        {" "}
         <ul>
           {cart &&
             cart.length > 0 &&
@@ -76,8 +95,7 @@ const IndexDb = () => {
               return (
                 <li>
                   ID : {e.id} <br></br> Name : {e.name} <br></br> ProductId :{" "}
-                  {e.pid}{" "}<br></br> Quantity :{e.quantity}{" "}
-                 
+                  {e.pid} <br></br> Quantity :{e.quantity}{" "}
                   <i onClick={() => Delete(e.id)} className="bi bi-trash3"></i>{" "}
                   <br></br>
                 </li>
