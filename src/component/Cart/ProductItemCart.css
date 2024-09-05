@@ -37,12 +37,12 @@
   font-weight: bolder;
 }
 
-#quantBtn:hover
-{
-  animation: 4s linear ease alternate bounce;
-  transform: translateY(-10px);
-  /* transform: scale(1.2); */
+#quantBtn:active {
+  
+  box-shadow: 0 5px #666;
+  transform: translateY(-4px);
 }
+
 @keyframes bounce {
   0% {
     background-color: rgb(255, 13, 0);

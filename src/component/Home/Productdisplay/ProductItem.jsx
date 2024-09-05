@@ -70,7 +70,7 @@ const ProductItem = (props) => {
           </div>
           <div className="other">
             <button disabled={true} type="button" id="stockbtn" className={` btn btn-sm btn-${inStock ?"info": "danger"} `}>
-         {inStock ?"In Stock": "Out Of Stock"}      <span className="badge">{(!isNaN(item.stock-_quantity)?item.stock-_quantity:item.stock)}</span>
+            <i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;{inStock ?"In Stock": "Out Of Stock"}      <span className="badge">{(!isNaN(item.stock-_quantity)?item.stock-_quantity:item.stock)}</span>
             </button>
 
             <div>

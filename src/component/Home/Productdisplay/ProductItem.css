@@ -51,10 +51,10 @@
   animation-direction: normal;
   /* transform: translateY(-5px); */
 }
-#cartbtn:hover {
-  animation: 4s linear 250ms ease-in alternate;
-  /* transform: translateY(-5px); */
-  transform: scale(1.2);
+#cartbtn:active {
+  
+  box-shadow: 0 5px #666;
+  transform: translateY(-4px);
 }
 @keyframes color {
   0% {
