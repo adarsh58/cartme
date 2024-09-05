@@ -37,6 +37,39 @@
   font-weight: bolder;
 }
 
+#quantBtn:hover
+{
+  animation: 4s linear ease alternate bounce;
+  transform: translateY(-10px);
+  /* transform: scale(1.2); */
+}
+@keyframes bounce {
+  0% {
+    background-color: rgb(255, 13, 0);
+    transform: translateY(0px);
+  }
+
+  25% {
+    background-color: rgb(38, 255, 0);
+    transform: translateY(0.2px);
+  
+  }
+
+  50% {
+    background-color: rgb(255, 13, 0);
+    transform: translateY(0.5px);
+  }
+
+  75% {
+    background-color: rgb(38, 255, 0);
+    transform: translateY(0.2px);
+  }
+
+  100% {
+    background-color: rgb(255, 13, 0);
+    transform: scale(1);
+  }
+}
 
 
 

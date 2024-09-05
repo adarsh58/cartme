@@ -50,9 +50,7 @@ const Cart = (props) => {
         <div className="slider">
           <CartCrousel />
         </div>
-        <div className="static">
-          <img src={nord}></img>
-        </div>
+       
       </div>
       <div className="cartproducts">
         {
@@ -65,8 +63,12 @@ const Cart = (props) => {
           })}
       </div>
       <div className="static">
+          <img src={nord}></img>
+        </div>
+      <div className="static">
           <img src={detailIphone}></img>
         </div>
+        
     </div>
   );
 };

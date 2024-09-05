@@ -10,7 +10,7 @@ const ProductItem = (props) => {
   const { AddtoCart, GetQuantityByPid, UpdatetoCart,cart } =
     useContext(ProductContext);
    
-    
+
     const _cart = cart.filter((e) => {
       return e.pid === item.id;
     });
@@ -69,7 +69,7 @@ const ProductItem = (props) => {
             </span>
           </div>
           <div className="other">
-            <button type="button" className={`btn btn-sm btn-${inStock ?"info": "danger"}`}>
+            <button disabled={true} type="button" id="stockbtn" className={` btn btn-sm btn-${inStock ?"info": "danger"} `}>
          {inStock ?"In Stock": "Out Of Stock"}      <span className="badge">{(!isNaN(item.stock-_quantity)?item.stock-_quantity:item.stock)}</span>
             </button>
 
@@ -80,6 +80,7 @@ const ProductItem = (props) => {
           </div>
           <div className="addcart">
             <button
+              id="cartbtn"
               onClick={(e) => handleClick(item.title, item.id)}
               type="button"
               className="btn btn-sm btn-warning mx-3"
@@ -88,6 +89,7 @@ const ProductItem = (props) => {
               <span style={{ fontSize: "10px" }}>Add to cart</span>
             </button>
             <button
+             id="cartbtn"
               onClick={(e) => handleBuy(item.title, item.id)}
               type="button"
               className="btn btn-sm mx-3 btn-warning my-2"

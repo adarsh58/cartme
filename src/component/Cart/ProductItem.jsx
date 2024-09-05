@@ -41,7 +41,7 @@ const ProductItem = (props) => {
           </div>
 
           <div className="cartcheckout">
-        {inStock ? <button type="button" className="btn btn-sm  btn-warning">
+        {inStock ? <button type="button" id="quantBtn" className="btn btn-sm  btn-warning">
           <span  className="mx-2">Qty</span>
             <i
               class="bi bi-dash-circle-fill mx-2"
